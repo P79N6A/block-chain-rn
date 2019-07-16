@@ -5,8 +5,7 @@ import { Card } from '@ant-design/react-native';
 import Dialog from "react-native-dialog";
 
 import Web3 from 'web3';
-const web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('https://mainnet.infura.io/v3/5209c849762f40ce866e3b1332596997'));
+const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/5209c849762f40ce866e3b1332596997'));
 
 class Welcome extends Component {
   constructor(props) {
@@ -44,7 +43,11 @@ class Welcome extends Component {
    */
   storeData = async () => {
     try {
-      await AsyncStorage.setItem('account', JSON.stringify(this.state.account));
+      console.log(this.state.account, "@@@@@@@@@@@@@@@@");
+      await AsyncStorage.setItem('account', JSON.stringify({
+        address: this.state.account.address,
+        privateKey: this.state.account.privateKey,
+      }));
       console.log('done');
       this.props.checkWallet();
     } catch (error) {

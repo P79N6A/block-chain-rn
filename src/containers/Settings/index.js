@@ -4,8 +4,7 @@ import { StackActions, NavigationActions } from 'react-navigation';
 import { Card } from '@ant-design/react-native';
 
 import Web3 from 'web3';
-const web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('https://mainnet.infura.io/v3/5209c849762f40ce866e3b1332596997'));
+const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/5209c849762f40ce866e3b1332596997'));
 
 class Settings extends Component {
   constructor(props) {

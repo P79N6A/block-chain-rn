@@ -6,8 +6,7 @@ import WelcomeScreen from '../Welcome';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Web3 from 'web3';
-const web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('https://mainnet.infura.io/v3/5209c849762f40ce866e3b1332596997'));
+const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/5209c849762f40ce866e3b1332596997'));
 
 class Home extends Component {
   static navigationOptions = ({ navigation }) => {
